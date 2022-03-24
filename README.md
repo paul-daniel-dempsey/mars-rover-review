@@ -1,4 +1,3 @@
-REVIEW BRANCH CREATED FOR BHUVI + LAKSHMI
 Key Features ->
 Controller object used to create the following items given string setups
 Boundary object : Where vehicle is allowed to drive
@@ -36,6 +35,9 @@ Future Enhancements (provisioned) ->
 2. Vehicle move backwards as well as forwards (optional commands: F=Forward B=Backward or M)
 3. Vehicle move multiple steps (optional vehicle setup: 'X Y N/E/S/W STEP' where STEP 1-5)
 4. Vehicle & Boundary Identification (optional Go Function Identifier Strings for grid and vehicle)
+
+Revision ->
+Multiple Sequential Rovers Now Supported (controller.GoMultiple), the final resting place of each vehicle returned in string 'Name X Y D,Name X Y D,...'.
 
 ==========================================================
 

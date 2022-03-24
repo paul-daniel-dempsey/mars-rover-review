@@ -37,4 +37,9 @@ export class Boundary {
     validateLocation(x : number, y :number) : boolean {
         return (this.validSetup && x < this.xLimit && x >= 0 && y < this.yLimit && y >= 0) ? (this.xyAllowGrid[y][x] !== 'N') : false;
     }
+
+    // Make location not enterable
+    inValidateLocation(x : number, y :number) {
+        this.xyAllowGrid[y][x] = 'N';
+    }
 }

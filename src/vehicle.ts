@@ -7,8 +7,8 @@ const ALLHEADINGS = 'NESW';
 export class Vehicle {
 
     private step : number;
-    private x : number;
-    private y : number;
+    x : number;
+    y : number;
     private direction : string;
 
     private moveRecord : string;

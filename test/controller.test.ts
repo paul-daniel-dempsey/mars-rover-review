@@ -1,4 +1,4 @@
-import { Go } from '../src/controller';
+import { Go, GoMultiple } from '../src/controller';
  
 describe("Controller", () => {
 
@@ -193,5 +193,12 @@ it.each([
     ])
     ("Vehicle move in bigger steps", (identifiers, vehicle, commands, identBoundary, identVehicle, result) => {
     expect(Go(undefined,identifiers,vehicle,commands,identBoundary,identVehicle)).toEqual(result);
+    });
+
+    it.each([['5 5',undefined,[['0 0 N','MMRM','RoverA'],['0 0 N','MMMRM','RoverB']],'RoverA 1 2 E,RoverB 1 3 E,'],
+             ['5 5',undefined,[['0 0 N','MMRM','RoverA'],['0 0 N','MMRM','RoverB']],'RoverA 1 2 E,RoverB 0 2 E,'],
+    ])
+    ("Sequential Rovers on same Plateau will go around each other : [%p][%p][%o]=[%p]", (boundary, customboundary, vehicles,result) => {
+    expect(GoMultiple(boundary,customboundary,vehicles)).toEqual(result);
     });
 });
